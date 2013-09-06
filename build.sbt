@@ -11,3 +11,5 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
     "org.eclipse.swt" % "org.eclipse.swt.gtk.linux.x86_64" % "4.3"
 )
+
+fork in run := true

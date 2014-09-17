@@ -4,6 +4,7 @@ import org.eclipse.swt.events.{SelectionListener, SelectionEvent, SelectionAdapt
 import org.eclipse.swt.layout.{GridData, FillLayout, GridLayout}
 import org.eclipse.swt.SWT
 import org.eclipse.swt.widgets._
+import org.eclipse.swt.browser.Browser
 
 
 object TestObject {    
@@ -41,6 +42,14 @@ object TestObject {
         }
         button text "Close" gridData (SWT.LEFT, SWT.CENTER, true, true) onSelect {
             shell close
+        }
+        browser(SWT.WEBKIT) name "browser" gridData (SWT.FILL, SWT.FILL, true, true)
+        button text "Load" gridData (SWT.CENTER, SWT.CENTER, true, true) onSelect {
+          (ctls get "browser") match {
+            case Some(b:Browser) =>
+              b.setUrl("http://www.google.com")
+            case _ => println("Something is wrong!")
+          }
         }
     } shell
 

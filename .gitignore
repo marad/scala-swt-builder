@@ -1,3 +1,6 @@
 project/
 target/
 *.sublime*
+.idea/
+.idea_modules/
+*.swp

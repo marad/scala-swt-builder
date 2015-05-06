@@ -5,7 +5,6 @@ import org.eclipse.swt.SWT
 import org.eclipse.swt.events.{SelectionListener,SelectionAdapter,SelectionEvent}
 import org.eclipse.swt.widgets._
 import org.eclipse.swt.layout._
-import org.eclipse.swt.browser.Browser
 
 class ShellBuilder(val display : Display) {
 
@@ -124,5 +123,4 @@ class ShellBuilder(val display : Display) {
 	def group(style:Int) : Group = new Group(context.value, style)
 	def canvas() : Canvas = new Canvas(context.value, SWT.NONE)
 	def canvas(style:Int) : Canvas = new Canvas(context.value, style)
-	def browser(style:Int) : Browser = new Browser(context.value, style)
 }

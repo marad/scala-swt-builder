@@ -1,5 +1,7 @@
-name := "scala-swt-builder"
-version := "1.0"
+organization := "io.github.marad"
+name := "swt-builder"
+version := "1.0.0"
+
 scalaVersion := "2.11.6"
 
 resolvers ++= Seq(
@@ -11,3 +13,5 @@ libraryDependencies ++= Seq(
 )
 
 fork in run := true
+
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))

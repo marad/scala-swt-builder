@@ -10,5 +10,4 @@ libraryDependencies ++= Seq(
     "org.eclipse.swt" % "org.eclipse.swt.gtk.linux.x86_64" % "4.4"
 )
 
-mainClass in run := Some("marad.scala.swt.builder.TestObject")
 fork in run := true

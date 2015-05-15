@@ -1,22 +1,19 @@
-package marad.scala.swt.builder;
+package io.github.marad.swt.builder
 
-import org.eclipse.swt.events.{SelectionListener, SelectionEvent, SelectionAdapter}
-import org.eclipse.swt.layout.{GridData, FillLayout, GridLayout}
 import org.eclipse.swt.SWT
 import org.eclipse.swt.widgets._
 
-
-object TestObject {    
+object Test {
 
 	def main(args: Array[String]) {
     val display = new Display()
 
     val sh = new ShellBuilder(display) {
         shell text "User Profile" gridLayout (2, true)
-        group text "Name" gridLayout 2 gridData (SWT.FILL, SWT.FILL, true, true) withChildren {
-            label text "First"; 
+        group text "Name" gridLayout (2, false) gridData (SWT.FILL, SWT.FILL, true, true) withChildren {
+            label text "First"
             edit text "Bullet" gridData (SWT.FILL, SWT.CENTER, true, true) name "first"
-            label text "Last"; 
+            label text "Last" 
             edit text "Tooth" gridData (SWT.FILL, SWT.CENTER, true, true) name "last"
         }  
         group text "Gender" fillLayout (SWT.HORIZONTAL, 5) gridData (SWT.FILL, SWT.FILL, true, true) withChildren {
@@ -33,7 +30,7 @@ object TestObject {
         }
 
         button text "Save" gridData (SWT.RIGHT, SWT.CENTER, true, true) onSelect {
-            (ctls get "first", ctls get "last") match {
+            (ctl("first"), ctl("last")) match {
                 case (Some(f:Text), Some(l:Text)) =>
                     println("Name: " + f.getText + " " + l.getText)
                 case _ => println("Something is wrong!")

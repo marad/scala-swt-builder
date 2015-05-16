@@ -11,7 +11,11 @@ I'd like to throw in event handling as well (currently only `onSelect` is implem
 
 In SBT 0.13.6+ you only need to add my Bintray repository
 
-	resolvers += Resolver.bintrayRepo("moriturius", "maven")
+	resolvers ++= Seq(
+	  Resolver.jcenterRepo,
+	  "swt-repo" at "https://swt-repo.googlecode.com/svn/repo/"
+	)
+
 
 and add the dependency
 
